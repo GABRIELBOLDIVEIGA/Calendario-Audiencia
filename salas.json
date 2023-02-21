@@ -1,0 +1,47 @@
+[
+    {
+        "sala_nome": "Sala 1",
+        "sala_id": "38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com",
+        "cor": "#e3baff",
+        "usuarios": [
+            {
+                "nome": "1º Civel",
+                "email": "1civelteste@gmail.com"
+            },
+            {
+                "nome": "GabrielBoldi",
+                "email": "gabrielbolditeste@gmail.com"
+            }
+        ]
+    },
+    {
+        "sala_nome": "Sala 2",
+        "sala_id": "658e05f590c7fc63f7042bb7ce22fbc37f44d092a73755550f421a3999cecfa8@group.calendar.google.com",
+        "cor": "#a9ddb7",
+        "usuarios": [
+            {
+                "nome": "2º de Orfão",
+                "email": "2orfaocivel@gmail.com"
+            },
+            {
+                "nome": "GabrielBoldi",
+                "email": "gabrielbolditeste@gmail.com"
+            }
+        ]
+    },
+    {
+        "sala_nome": "Sala 3",
+        "sala_id": "9634a8ad2b9ee6f92e89ee910f88067f2e49036f9333cf45f86beb8ce066b8e0@group.calendar.google.com",
+        "cor": "#f3ca3a",
+        "usuarios": [
+            {
+                "nome": "3º de Familia",
+                "email": "3familiateste@gmail.com"
+            },
+            {
+                "nome": "GabrielBoldi",
+                "email": "gabrielbolditeste@gmail.com"
+            }
+        ]
+    }
+]
