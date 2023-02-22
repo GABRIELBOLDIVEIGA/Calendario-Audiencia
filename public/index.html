@@ -128,6 +128,7 @@
                 sala.forEach((evento) => {
                     let data = new Date(evento.start.dateTime).toLocaleDateString("pt-PT");
                     let horario = new Date(evento.start.dateTime).toLocaleTimeString("pt-PT");
+                    let id = getID(evento.organizer.displayName);
 
                     salas_filtrada.push({
                         emailVara: evento.creator.email,
@@ -135,32 +136,28 @@
                         inicio: horario,
                         nomeSala: evento.organizer.displayName,
                         processo: evento.summary,
+                        id: id
                     });
                 });
                 // console.log(salas_filtrada);
 
                 salasComEventos.push(salas_filtrada);
         
-                console.clear();
-                console.log(salasComEventos);
+                // console.clear();
+                // console.log(salasComEventos);
                 
                 conteudo.value = salasComEventos;
-                // salas_filtrada.forEach((evento) => {
-                //     console.log(`${evento.nomeSala} \nVara: ${evento.emailVara} \nProcesso: ${evento.processo} \nData: ${evento.data} \nInicio: ${evento.inicio}`)
-                // });
+                
+            }
 
-                // console.log(salas_filtrada);
-                // console.log(salas_filtrada.length);
-
-                // sala.forEach((element) => {
-                //     eventosDoDia.push(element);
-                //     conteudo.value = eventosDoDia;
-                // });
+            function getID(string) {
+                var numsStr = string.replace(/[^0-9]/g,'');
+                return parseInt(numsStr);
             }
 
             
-            const minutos = 1000 * 1800; // milésimos * segundo 
-            setInterval(listUpcomingEvents, 1000 * 40); // Atualiza a agenda a cada 30 minutos
+            // const minutos = 1000 * 1800; // milésimos * segundo 
+            // setInterval(listUpcomingEvents, 1000 * 40); // Atualiza a agenda a cada 30 minutos
         </script>
 
         <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
