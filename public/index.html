@@ -33,6 +33,28 @@
                 "ddf2b61751235af9cc4ec1a78e047d30b6321483f66ef984788676b5b4f1f275@group.calendar.google.com",
                 "a274e309e5e39378fe9fabe9f4091663450d6891097016808126be5686c9d248@group.calendar.google.com",
             ];
+            const usuarios = [
+                {
+                    nome: "1º Civel",
+                    email: "1civelteste@gmail.com",
+                },
+                {
+                    nome: "2º de Orfão",
+                    email: "2orfaocivel@gmail.com",
+                },
+                {
+                    nome: "3º de Familia",
+                    email: "3familiateste@gmail.com",
+                },
+                {
+                    nome: "Gabriel Boldi",
+                    email: "gabrielbolditeste@gmail.com",
+                },
+                {
+                    nome: "Pao De Batata",
+                    email: "paoDeBatata@gmail.com",
+                },
+            ];
 
             let tokenClient;
             // let gapiInited = false;
@@ -42,7 +64,7 @@
             let eventosDoDia = [];
 
             document.getElementById("signout_button").style.visibility = "hidden"; // tem q estar hidden
-            
+
             document.getElementById("root").style.visibility = "hidden";
 
             function gapiLoaded() {
@@ -116,47 +138,53 @@
                 });
             }
 
-            
-
             let salasComEventos = [];
             /* async */ function capturaConteudo(sala) {
+                // console.log(sala)
                 let salas_filtrada = [];
                 let objEvento = {};
-            
+
                 if (!sala.length) return;
-                
+
                 sala.forEach((evento) => {
                     let data = new Date(evento.start.dateTime).toLocaleDateString("pt-PT");
                     let horario = new Date(evento.start.dateTime).toLocaleTimeString("pt-PT");
-                    let id = getID(evento.organizer.displayName);
+                    let nSala = numeroSala(evento.organizer.displayName);
+                    let criador = addNome(evento.creator.email);
 
                     salas_filtrada.push({
                         emailVara: evento.creator.email,
                         data: data,
                         inicio: horario,
                         nomeSala: evento.organizer.displayName,
+                        nomeVara: criador,
                         processo: evento.summary,
-                        id: id
+                        id: evento.organizer.email,
+                        numeroSala: nSala,
                     });
                 });
                 // console.log(salas_filtrada);
 
                 salasComEventos.push(salas_filtrada);
-        
+
                 // console.clear();
-                // console.log(salasComEventos);
-                
+                console.log(salasComEventos);
+
                 conteudo.value = salasComEventos;
-                
             }
 
-            function getID(string) {
-                var numsStr = string.replace(/[^0-9]/g,'');
+            function numeroSala(string) {
+                var numsStr = string.replace(/[^0-9]/g, "");
                 return parseInt(numsStr);
             }
 
-            
-            // const minutos = 1000 * 1800; // milésimos * segundo 
+            function addNome(criador) {
+                const result = usuarios.find(({ email }) => email === criador);
+
+                return result.nome;
+            }
+
+            // const minutos = 1000 * 1800; // milésimos * segundo
             // setInterval(listUpcomingEvents, 1000 * 40); // Atualiza a agenda a cada 30 minutos
         </script>
 
