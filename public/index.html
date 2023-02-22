@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="./index.css" />
         <title>Agenda de Audiências</title>
         <meta charset="utf-8" />
     </head>
+
     <body>
         <header id="cabecaho">
-            <button id="authorize_button" onclick="handleAuthClick()">Login</button>
-            <button id="signout_button" onclick="window.location.reload()">Reload</button>
+            <button title="Logar" id="authorize_button" onclick="handleAuthClick()"></button>
+            <button title="Relogar Pagina" id="signout_button" onclick="window.location.reload()"></button>
+            <button onclick="listUpcomingEvents()">atualiza agenda</button>
         </header>
+
         <div id="root"></div>
         <div id="conteudo"></div>
 
@@ -17,19 +21,32 @@
             const API_KEY = "AIzaSyBQLBw71zHs2WEwyepFCOmr7zhdrw9qTBU";
             const DISCOVERY_DOC = "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
             const SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
-            const salas_ID = ["38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com", "658e05f590c7fc63f7042bb7ce22fbc37f44d092a73755550f421a3999cecfa8@group.calendar.google.com", "9634a8ad2b9ee6f92e89ee910f88067f2e49036f9333cf45f86beb8ce066b8e0@group.calendar.google.com"];
+            const salas_ID = [
+                "38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com",
+                "658e05f590c7fc63f7042bb7ce22fbc37f44d092a73755550f421a3999cecfa8@group.calendar.google.com",
+                "9634a8ad2b9ee6f92e89ee910f88067f2e49036f9333cf45f86beb8ce066b8e0@group.calendar.google.com",
+                "06ee953fab1c6af5dff855b3cb837855c9c443d848ad777819f2ba6864cb8961@group.calendar.google.com",
+                "4a17fb26334d629a4a5ba384b4b12b148fe7608063d4435af60355ae51a56ff7@group.calendar.google.com",
+                "634752bad6fd185e7bb161f9a533880ec2bf539dad562fad698c86c831d775de@group.calendar.google.com",
+                "88585099a30f9532d2e94a377302ffa00a441de33fe0edfb77a7fb16792e88a0@group.calendar.google.com",
+                "c9cd45bbd575c5685f81b695e178485765e05b6e4650d1b0097d809272055c0c@group.calendar.google.com",
+                "ddf2b61751235af9cc4ec1a78e047d30b6321483f66ef984788676b5b4f1f275@group.calendar.google.com",
+                "a274e309e5e39378fe9fabe9f4091663450d6891097016808126be5686c9d248@group.calendar.google.com",
+            ];
 
             let tokenClient;
-            let gapiInited = false;
-            let gisInited = false;
+            // let gapiInited = false;
+            // let gisInited = false;
 
             const conteudo = document.getElementById("conteudo");
             let eventosDoDia = [];
 
-            document.getElementById("signout_button").style.visibility = "hidden";
+            document.getElementById("signout_button").style.visibility = "hidden"; // tem q estar hidden
+            
             document.getElementById("root").style.visibility = "hidden";
 
             function gapiLoaded() {
+                console.log("gapiLoaded()");
                 gapi.load("client", initializeGapiClient);
             }
 
@@ -38,24 +55,27 @@
                     apiKey: API_KEY,
                     discoveryDocs: [DISCOVERY_DOC],
                 });
-                gapiInited = true;
+                // gapiInited = true; // nao sei para que serve
             }
 
             function gisLoaded() {
+                console.log("gisLoaded()");
                 tokenClient = google.accounts.oauth2.initTokenClient({
                     client_id: CLIENT_ID,
                     scope: SCOPES,
                     callback: "",
                 });
-                gisInited = true;
+                // console.log(tokenClient)
+                // gisInited = true; // nao sei para que serve
             }
 
             function handleAuthClick() {
+                // console.log(tokenClient)
                 tokenClient.callback = async (resp) => {
                     document.getElementById("signout_button").style.visibility = "visible";
                     document.getElementById("authorize_button").style.display = "none";
                     document.getElementById("root").style.visibility = "visible";
-
+                    // console.log(resp)
                     await listUpcomingEvents();
                 };
 
@@ -64,14 +84,16 @@
                 } else {
                     tokenClient.requestAccessToken({ prompt: "" });
                 }
-
-                eventosDoDia = [];
             }
 
             async function listUpcomingEvents() {
-                let response;
+                salasComEventos = [];
+                let calendar;
 
                 salas_ID.forEach(async (sala_id) => {
+                    var cont = 0;
+                    var obj = {};
+
                     try {
                         const request = {
                             calendarId: sala_id,
@@ -81,24 +103,64 @@
                             maxResults: 10,
                             orderBy: "startTime",
                         };
-                        response = await gapi.client.calendar.events.list(request);
+
+                        calendar = await gapi.client.calendar.events.list(request);
                     } catch (err) {
                         console.log(err.message);
                         return;
                     }
 
-                    const events = response.result.items;
+                    const events = calendar.result.items;
 
                     capturaConteudo(events);
                 });
             }
 
-            async function capturaConteudo(array) {
-                array.forEach((element) => {
-                    eventosDoDia.push(element);
-                    conteudo.value = eventosDoDia;
+            
+
+            let salasComEventos = [];
+            /* async */ function capturaConteudo(sala) {
+                let salas_filtrada = [];
+                let objEvento = {};
+            
+                if (!sala.length) return;
+                
+                sala.forEach((evento) => {
+                    let data = new Date(evento.start.dateTime).toLocaleDateString("pt-PT");
+                    let horario = new Date(evento.start.dateTime).toLocaleTimeString("pt-PT");
+
+                    salas_filtrada.push({
+                        emailVara: evento.creator.email,
+                        data: data,
+                        inicio: horario,
+                        nomeSala: evento.organizer.displayName,
+                        processo: evento.summary,
+                    });
                 });
+                // console.log(salas_filtrada);
+
+                salasComEventos.push(salas_filtrada);
+        
+                console.clear();
+                console.log(salasComEventos);
+                
+                conteudo.value = salasComEventos;
+                // salas_filtrada.forEach((evento) => {
+                //     console.log(`${evento.nomeSala} \nVara: ${evento.emailVara} \nProcesso: ${evento.processo} \nData: ${evento.data} \nInicio: ${evento.inicio}`)
+                // });
+
+                // console.log(salas_filtrada);
+                // console.log(salas_filtrada.length);
+
+                // sala.forEach((element) => {
+                //     eventosDoDia.push(element);
+                //     conteudo.value = eventosDoDia;
+                // });
             }
+
+            
+            const minutos = 1000 * 1800; // milésimos * segundo 
+            setInterval(listUpcomingEvents, 1000 * 40); // Atualiza a agenda a cada 30 minutos
         </script>
 
         <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>

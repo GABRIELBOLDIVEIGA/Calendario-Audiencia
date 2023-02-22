@@ -1,0 +1,45 @@
+body{
+    /* background-color: red; */
+}
+
+#authorize_button {
+    background-color: transparent;
+    background-image: url("./assets/cara.png");
+    background-position: center;
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 999px;
+
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+}
+
+#authorize_button:hover {
+    background-image: url("./assets/cara.gif");
+    background-position: center;
+    background-size: 58px 58px; 
+}
+
+#signout_button {
+    background-color: transparent;
+    background-image: url("./assets/reload.png");
+    background-position: center;
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 999px;
+
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+}
+
+#signout_button:hover {
+    background-image: url("./assets/reload.gif");
+    background-position: center;
+    background-size: 58px 58px;
+    
+    
+}

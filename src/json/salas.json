@@ -1,0 +1,152 @@
+[
+    {
+        "sala": "Sala 1",
+        "id": "38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com",
+        "cor": "#e3baff",
+        "usuarios": [
+            {
+                "nome": "1º Civel",
+                "email": "1civelteste@gmail.com"
+            },
+            {
+                "nome": "GabrielBoldi",
+                "email": "gabrielbolditeste@gmail.com"
+            }
+        ]
+    },
+    {
+        "sala": "Sala 2",
+        "id": "658e05f590c7fc63f7042bb7ce22fbc37f44d092a73755550f421a3999cecfa8@group.calendar.google.com",
+        "cor": "#a9ddb7",
+        "usuarios": [
+            {
+                "nome": "2º de Orfão",
+                "email": "2orfaocivel@gmail.com"
+            },
+            {
+                "nome": "GabrielBoldi",
+                "email": "gabrielbolditeste@gmail.com"
+            }
+        ]
+    },
+    {
+        "sala": "Sala 3",
+        "id": "9634a8ad2b9ee6f92e89ee910f88067f2e49036f9333cf45f86beb8ce066b8e0@group.calendar.google.com",
+        "cor": "#f3ca3a",
+        "usuarios": [
+            {
+                "nome": "3º de Familia",
+                "email": "3familiateste@gmail.com"
+            },
+            {
+                "nome": "GabrielBoldi",
+                "email": "gabrielbolditeste@gmail.com"
+            }
+        ]
+    },
+    {
+        "sala": "Sala 4",
+        "id": "06ee953fab1c6af5dff855b3cb837855c9c443d848ad777819f2ba6864cb8961@group.calendar.google.com",
+        "cor": "#f3ca3a",
+        "usuarios": [
+            {
+                "nome": "---",
+                "email": "---"
+            },
+            {
+                "nome": "GabrielBoldi",
+                "email": "gabrielbolditeste@gmail.com"
+            }
+        ]
+    },
+    {
+        "sala": "Sala 5",
+        "id": "4a17fb26334d629a4a5ba384b4b12b148fe7608063d4435af60355ae51a56ff7@group.calendar.google.com",
+        "cor": "#f3ca3a",
+        "usuarios": [
+            {
+                "nome": "---",
+                "email": "---"
+            },
+            {
+                "nome": "GabrielBoldi",
+                "email": "gabrielbolditeste@gmail.com"
+            }
+        ]
+    },
+    {
+        "sala": "Sala 6",
+        "id": "634752bad6fd185e7bb161f9a533880ec2bf539dad562fad698c86c831d775de@group.calendar.google.com",
+        "cor": "#f3ca3a",
+        "usuarios": [
+            {
+                "nome": "---",
+                "email": "---"
+            },
+            {
+                "nome": "GabrielBoldi",
+                "email": "gabrielbolditeste@gmail.com"
+            }
+        ]
+    },
+    {
+        "sala": "Sala 7",
+        "id": "88585099a30f9532d2e94a377302ffa00a441de33fe0edfb77a7fb16792e88a0@group.calendar.google.com",
+        "cor": "#f3ca3a",
+        "usuarios": [
+            {
+                "nome": "---",
+                "email": "---"
+            },
+            {
+                "nome": "GabrielBoldi",
+                "email": "gabrielbolditeste@gmail.com"
+            }
+        ]
+    },
+    {
+        "sala": "Sala 8",
+        "id": "c9cd45bbd575c5685f81b695e178485765e05b6e4650d1b0097d809272055c0c@group.calendar.google.com",
+        "cor": "#f3ca3a",
+        "usuarios": [
+            {
+                "nome": "---",
+                "email": "---"
+            },
+            {
+                "nome": "GabrielBoldi",
+                "email": "gabrielbolditeste@gmail.com"
+            }
+        ]
+    },
+    {
+        "sala": "Sala 9",
+        "id": "ddf2b61751235af9cc4ec1a78e047d30b6321483f66ef984788676b5b4f1f275@group.calendar.google.com",
+        "cor": "#f3ca3a",
+        "usuarios": [
+            {
+                "nome": "---",
+                "email": "---"
+            },
+            {
+                "nome": "GabrielBoldi",
+                "email": "gabrielbolditeste@gmail.com"
+            }
+        ]
+    },
+    {
+        "sala": "Sala 10",
+        "id": "a274e309e5e39378fe9fabe9f4091663450d6891097016808126be5686c9d248@group.calendar.google.com",
+        "cor": "#f3ca3a",
+        "usuarios": [
+            {
+                "nome": "---",
+                "email": "---"
+            },
+            {
+                "nome": "GabrielBoldi",
+                "email": "gabrielbolditeste@gmail.com"
+            }
+        ]
+    }
+]
