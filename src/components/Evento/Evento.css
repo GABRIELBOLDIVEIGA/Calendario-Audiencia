@@ -1,0 +1,90 @@
+.evento {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.75em;
+    width: 24%;
+    height: 30%;
+    border: 5px solid black !important;
+    box-shadow: 5px 5px;
+    border-radius: 15px;
+    background-color: #a3e8ff !important;
+}
+
+.h-d {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    /* border: 1px solid red; */
+}
+
+.data {
+    /* font-weight: 500 !important; */
+    font-weight: 600 !important;
+    font-size: 1.3em !important;
+}
+
+.horario {
+    font-weight: 600 !important;
+    font-size: 1.3em !important;
+    border: 3px solid black;
+    box-shadow: 3px 3px;
+    border-radius: 8px;
+    background-color: #dafc3d;
+
+    padding: 2px 10px;
+}
+
+.vara {
+    font-size: 2em !important;
+    font-weight: 600 !important;
+    align-self: center;
+
+    
+}
+
+.container_processoEnumero{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+
+    border: 5px solid black;
+    background-color: beige;
+    border-radius: 10px;
+    box-shadow: 5px 5px;
+    padding-top: 10px;
+}
+
+.nProcesso {
+    font-size: 1.5em !important;
+    font-weight: 600 !important;
+    padding-top: 0.4em !important;
+    margin-bottom: 0.3em !important;
+}
+
+.processo {
+    font-size: 1.3em !important;
+    font-weight: 600 !important;
+    border: 3px solid black;
+    box-shadow: 3px 3px;
+    background-color: white;
+    /* background-color: #dafc3d; */
+    border-radius: 10px;
+    padding: 3px 5px;
+    width: max-content;    
+}
+
+.container_rodape {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+    align-items: center;
+    margin-top: 10px;
+
+    /* border: 1px solid red; */
+}

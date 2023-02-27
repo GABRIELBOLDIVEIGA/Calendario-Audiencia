@@ -10,6 +10,9 @@ body {
 
     height: 99vh;
     /* border: 1px solid black; */
+
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 span {
@@ -35,7 +38,8 @@ header {
     height: 64px;
     cursor: pointer;
 
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
+    background-color: #a3e8ff;
     border-radius: 15px;
     border: 5px solid black;
     box-shadow: 3px 3px;

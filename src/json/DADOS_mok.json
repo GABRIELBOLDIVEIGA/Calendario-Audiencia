@@ -1,0 +1,248 @@
+[
+  [
+    {
+      "emailVara": "gabrielbolditeste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "16:30:00",
+      "nomeSala": "Sala 1",
+      "nomeVara": "Gabriel Boldi",
+      "processo": "123-456-789-321-654-987-00",
+      "id": "38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com",
+      "numeroSala": 1
+    },
+    {
+      "emailVara": "gabrielbolditeste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "17:30:00",
+      "nomeSala": "Sala 1",
+      "nomeVara": "Gabriel Boldi",
+      "processo": "123-456-789-987-654-321-00",
+      "id": "38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com",
+      "numeroSala": 1
+    },
+    {
+      "emailVara": "gabrielbolditeste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "18:30:00",
+      "nomeSala": "Sala 1",
+      "nomeVara": "Gabriel Boldi",
+      "processo": "123-456-789-987-654-321-00",
+      "id": "38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com",
+      "numeroSala": 1
+    },
+    {
+      "emailVara": "1civelteste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "20:00:00",
+      "nomeSala": "Sala 1",
+      "nomeVara": "1º Civel",
+      "processo": "123-456-789-987-654-321-00",
+      "id": "38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com",
+      "numeroSala": 1
+    },
+    {
+      "emailVara": "1civelteste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "20:30:00",
+      "nomeSala": "Sala 1",
+      "nomeVara": "1º Civel",
+      "processo": "123-456-789-987-654-321-00",
+      "id": "38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com",
+      "numeroSala": 1
+    },
+    {
+      "emailVara": "1civelteste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "21:00:00",
+      "nomeSala": "Sala 1",
+      "nomeVara": "1º Civel",
+      "processo": "123-456-789-321-654-987-00",
+      "id": "38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com",
+      "numeroSala": 1
+    },
+    {
+      "emailVara": "1civelteste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "21:30:00",
+      "nomeSala": "Sala 1",
+      "nomeVara": "1º Civel",
+      "processo": "123-456-789-987-654-321-00",
+      "id": "38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com",
+      "numeroSala": 1
+    },
+    {
+      "emailVara": "gabrielbolditeste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "22:00:00",
+      "nomeSala": "Sala 1",
+      "nomeVara": "Gabriel Boldi",
+      "processo": "123-456-789-987-654-321-00",
+      "id": "38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com",
+      "numeroSala": 1
+    },
+    {
+      "emailVara": "1civelteste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "22:15:00",
+      "nomeSala": "Sala 1",
+      "nomeVara": "1º Civel",
+      "processo": "123-456-789-321-654-987-00",
+      "id": "38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com",
+      "numeroSala": 1
+    },
+    {
+      "emailVara": "gabrielbolditeste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "23:00:00",
+      "nomeSala": "Sala 1",
+      "nomeVara": "Gabriel Boldi",
+      "processo": "123-456-789-987-654-321-00",
+      "id": "38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com",
+      "numeroSala": 1
+    },
+    {
+      "emailVara": "1civelteste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "23:30:00",
+      "nomeSala": "Sala 1",
+      "nomeVara": "1º Civel",
+      "processo": "123-456-789-987-654-321-00",
+      "id": "38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com",
+      "numeroSala": 1
+    },
+    {
+      "emailVara": "1civelteste@gmail.com",
+      "data": "01/03/2023",
+      "inicio": "23:00:00",
+      "nomeSala": "Sala 1",
+      "nomeVara": "1º Civel",
+      "processo": "123-456-789-321-654-987-00",
+      "id": "38bcd6af79aafc2409e9cb1c517f8011a99008b63ea688e5ea2bdadbdd29317c@group.calendar.google.com",
+      "numeroSala": 1
+    }
+  ],
+  [
+    {
+      "emailVara": "2orfaocivel@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "14:15:00",
+      "nomeSala": "Sala 2",
+      "nomeVara": "2º de Orfão",
+      "processo": "123-456-789-321-654-987-00",
+      "id": "658e05f590c7fc63f7042bb7ce22fbc37f44d092a73755550f421a3999cecfa8@group.calendar.google.com",
+      "numeroSala": 2
+    },
+    {
+      "emailVara": "gabrielbolditeste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "19:15:00",
+      "nomeSala": "Sala 2",
+      "nomeVara": "Gabriel Boldi",
+      "processo": "123-456-789-321-654-987-00",
+      "id": "658e05f590c7fc63f7042bb7ce22fbc37f44d092a73755550f421a3999cecfa8@group.calendar.google.com",
+      "numeroSala": 2
+    },
+    {
+      "emailVara": "gabrielbolditeste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "19:45:00",
+      "nomeSala": "Sala 2",
+      "nomeVara": "Gabriel Boldi",
+      "processo": "123-456-789-321-654-987-00",
+      "id": "658e05f590c7fc63f7042bb7ce22fbc37f44d092a73755550f421a3999cecfa8@group.calendar.google.com",
+      "numeroSala": 2
+    },
+    {
+      "emailVara": "2orfaocivel@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "23:30:00",
+      "nomeSala": "Sala 2",
+      "nomeVara": "2º de Orfão",
+      "processo": "123-456-789-321-654-987-00",
+      "id": "658e05f590c7fc63f7042bb7ce22fbc37f44d092a73755550f421a3999cecfa8@group.calendar.google.com",
+      "numeroSala": 2
+    }
+  ],
+  [
+    {
+      "emailVara": "3familiateste@gmail.com",
+      "data": "01/03/2023",
+      "inicio": "17:45:00",
+      "nomeSala": "Sala 3",
+      "nomeVara": "3º de Familia",
+      "processo": "123-456-789-321-654-987-00",
+      "id": "9634a8ad2b9ee6f92e89ee910f88067f2e49036f9333cf45f86beb8ce066b8e0@group.calendar.google.com",
+      "numeroSala": 3
+    },
+    {
+      "emailVara": "3familiateste@gmail.com",
+      "data": "01/03/2023",
+      "inicio": "21:45:00",
+      "nomeSala": "Sala 3",
+      "nomeVara": "3º de Familia",
+      "processo": "123-456-789-321-654-987-00",
+      "id": "9634a8ad2b9ee6f92e89ee910f88067f2e49036f9333cf45f86beb8ce066b8e0@group.calendar.google.com",
+      "numeroSala": 3
+    }
+  ],
+  [
+    {
+      "emailVara": "gabrielbolditeste@gmail.com",
+      "data": "01/03/2023",
+      "inicio": "01:15:00",
+      "nomeSala": "Sala 4",
+      "nomeVara": "Gabriel Boldi",
+      "processo": "123-456-789-321-654-987-00",
+      "id": "06ee953fab1c6af5dff855b3cb837855c9c443d848ad777819f2ba6864cb8961@group.calendar.google.com",
+      "numeroSala": 4
+    }
+  ],
+  [
+    {
+      "emailVara": "gabrielbolditeste@gmail.com",
+      "data": "01/03/2023",
+      "inicio": "01:30:00",
+      "nomeSala": "Sala 5",
+      "nomeVara": "Gabriel Boldi",
+      "processo": "123-456-789-321-654-987-00",
+      "id": "4a17fb26334d629a4a5ba384b4b12b148fe7608063d4435af60355ae51a56ff7@group.calendar.google.com",
+      "numeroSala": 5
+    }
+  ],
+  [
+    {
+      "emailVara": "gabrielbolditeste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "01:45:00",
+      "nomeSala": "Sala 6",
+      "nomeVara": "Gabriel Boldi",
+      "processo": "123-456-789-321-654-987-00",
+      "id": "634752bad6fd185e7bb161f9a533880ec2bf539dad562fad698c86c831d775de@group.calendar.google.com",
+      "numeroSala": 6
+    }
+  ],
+  [
+    {
+      "emailVara": "gabrielbolditeste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "20:00:00",
+      "nomeSala": "Sala 9",
+      "nomeVara": "Gabriel Boldi",
+      "processo": "123-456-789-321-654-987-00",
+      "id": "ddf2b61751235af9cc4ec1a78e047d30b6321483f66ef984788676b5b4f1f275@group.calendar.google.com",
+      "numeroSala": 9
+    }
+  ],
+  [
+    {
+      "emailVara": "gabrielbolditeste@gmail.com",
+      "data": "28/02/2023",
+      "inicio": "21:45:00",
+      "nomeSala": "Sala 10",
+      "nomeVara": "Gabriel Boldi",
+      "processo": "123-456-789-321-654-987-00",
+      "id": "a274e309e5e39378fe9fabe9f4091663450d6891097016808126be5686c9d248@group.calendar.google.com",
+      "numeroSala": 10
+    }
+  ]
+]
