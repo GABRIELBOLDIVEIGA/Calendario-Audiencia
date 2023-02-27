@@ -1,7 +1,122 @@
-.card {
-    border: 15px solid black;
+.container_titulo{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    
+    /* border: 1px solid red; */
+}
+
+h1 {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 5em !important;
+    font-weight: 700 !important;
+    margin-top: .5% !important;
+    margin-bottom: 1% !important;
+    text-align: center;
+    width: 20%;
+
+    background-color: #c5c5fe;
+    background-color: #ffadde;
+    border: 5px solid black;
+    box-shadow: 5px 5px;
+    border-radius: 15px;
 }
 
 .sala {
-    border: 5px solid red;
+    height: 95vh;
+    width: 100vw;
+    padding: 0 2em 2em 2em;
+
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.eventos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px !important;
+    height: 87%;
+}
+
+.evento {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.75em;
+    width: 24%;
+    height: 30%;
+    /* border: 1px solid #89898a !important; */
+    border: 5px solid black !important;
+    box-shadow: 5px 5px;
+    border-radius: 15px;
+    /* background-color: #1c1d1f !important; */
+    background-color: #a3e8ff !important;
+    
+}
+
+.h-d {
+    display: flex;
+    justify-content: space-between;
+    /* padding-top: 2em; */
+    /* padding: 0 20px 0 0; */
+
+    /* border: 1px solid red; */
+}
+
+.data {
+    /* border: 1px solid blue; */
+    font-weight: 500 !important;
+}
+
+.horario {
+    /* background-color: #f48a94;
+    border: 3px solid black;
+    box-shadow: 3px 3px;
+    border-radius: 7px;
+    padding: 2px 10px; */
+
+    font-weight: 600 !important;
+
+}
+
+.vara {
+    padding-top: 10px;
+    font-size: 2em !important;
+    font-weight: 600 !important;
+
+    /* border: 3px solid black;
+    box-shadow: 3px 3px;
+    background-color: #95f0c6;
+    border-radius: 10px;
+    width: max-content;
+    padding: 2px 10px; */
+    
+}
+
+.nProcesso {
+    font-size: 1.5em !important;
+    font-weight: 600 !important;
+    padding-top: 0.4em !important;
+    margin-bottom: 0.3em !important;
+}
+
+.processo {
+    font-size: 1.3em !important;
+    font-weight: 600 !important;
+    border: 3px solid black;
+    box-shadow: 3px 3px;
+    background-color: #ffadde;
+    background-color: #dafc3d;
+    border-radius: 10px;
+    padding: 3px 5px;
+    width: max-content;
+}
+
+.container_rodape {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
 }

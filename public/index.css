@@ -1,25 +1,52 @@
-body{
-    /* background-color: red; */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+
+    background-color: #fefff4 !important;
+    color: black !important;
+    font-family: "Montserrat", sans-serif !important;
+
+    height: 99vh;
+    /* border: 1px solid black; */
+}
+
+span {
+    display: none !important;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    
 }
 
 #authorize_button {
-    background-color: transparent;
-    background-image: url("./assets/cara.png");
+    /* background-color: transparent; */
+    background-image: url("./assets/user.svg");
     background-position: center;
     background-size: 48px 48px;
     background-repeat: no-repeat;
-    border: none;
-    border-radius: 999px;
+    /* border: none;
+    border-radius: 999px; */
 
     width: 64px;
     height: 64px;
     cursor: pointer;
+
+    background-color: aquamarine;
+    border-radius: 15px;
+    border: 5px solid black;
+    box-shadow: 3px 3px;
+
+    /* transform: translate(500%); */
 }
 
-#authorize_button:hover {
-    background-image: url("./assets/cara.gif");
-    background-position: center;
-    background-size: 58px 58px; 
+#authorize_button:active {
+    border: 2px solid greenyellow;
+    box-shadow: 0 0 greenyellow;
+    transform: translate(2px, 2px);
 }
 
 #signout_button {
@@ -34,12 +61,4 @@ body{
     width: 64px;
     height: 64px;
     cursor: pointer;
-}
-
-#signout_button:hover {
-    background-image: url("./assets/reload.gif");
-    background-position: center;
-    background-size: 58px 58px;
-    
-    
 }

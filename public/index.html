@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="./reset.css" />
         <link rel="stylesheet" href="./index.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
+          
         <title>Agenda de Audiências</title>
         <meta charset="utf-8" />
     </head>
@@ -9,10 +14,11 @@
     <body>
         <header id="cabecaho">
             <button title="Logar" id="authorize_button" onclick="handleAuthClick()"></button>
-            <button title="Relogar Pagina" id="signout_button" onclick="window.location.reload()"></button>
-            <button onclick="listUpcomingEvents()">atualiza agenda</button>
+           
+            <!-- <button title="Relogar Pagina" id="signout_button" onclick="window.location.reload()"></button> -->
+            <!-- <button onclick="listUpcomingEvents()">atualiza agenda</button> -->
         </header>
-
+        
         <div id="root"></div>
         <div id="conteudo"></div>
 
@@ -63,7 +69,7 @@
             const conteudo = document.getElementById("conteudo");
             let eventosDoDia = [];
 
-            document.getElementById("signout_button").style.visibility = "hidden"; // tem q estar hidden
+            // document.getElementById("signout_button").style.visibility = "hidden"; // tem q estar hidden
 
             document.getElementById("root").style.visibility = "hidden";
 
@@ -94,7 +100,7 @@
             function handleAuthClick() {
                 // console.log(tokenClient)
                 tokenClient.callback = async (resp) => {
-                    document.getElementById("signout_button").style.visibility = "visible";
+                    // document.getElementById("signout_button").style.visibility = "none";
                     document.getElementById("authorize_button").style.display = "none";
                     document.getElementById("root").style.visibility = "visible";
                     // console.log(resp)
@@ -122,7 +128,7 @@
                             timeMin: new Date().toISOString(),
                             showDeleted: false,
                             singleEvents: true,
-                            maxResults: 10,
+                            maxResults: 12,
                             orderBy: "startTime",
                         };
 
@@ -168,7 +174,7 @@
                 salasComEventos.push(salas_filtrada);
 
                 // console.clear();
-                console.log(salasComEventos);
+                // console.log(salasComEventos);
 
                 conteudo.value = salasComEventos;
             }
