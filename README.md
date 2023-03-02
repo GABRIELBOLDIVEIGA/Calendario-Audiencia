@@ -12,20 +12,19 @@ Live Demo: https://calendario-audiencia.vercel.app/
 `Login sera bloqueado se não utilizar um email de ADM da API do google`
 
 ## Pacotes
-`react-google-calendar-api
-`
+`react-google-calendar-api`<br>
 https://www.npmjs.com/package/react-google-calendar-api
 
-`react-router-dom`
+`react-router-dom`<br>
 https://www.npmjs.com/package/react-router-dom
 
-`sass`
+`sass`<br>
 https://www.npmjs.com/package/react-css-modules
 
-`react-uuid`
+`react-uuid`<br>
 https://www.npmjs.com/package/react-uuid
 
-`react-bootstrap bootstrap`
+`react-bootstrap bootstrap`<br>
 https://react-bootstrap.github.io/getting-started/introduction/
 
 
