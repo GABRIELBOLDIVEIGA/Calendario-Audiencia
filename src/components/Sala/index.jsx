@@ -3,17 +3,15 @@ import Evento from "components/Evento";
 import uuid from 'react-uuid';
 
 export default function Sala({ sala }) {
-    console.log(sala)
+    // console.log(sala)
     return (
         <div>
-            <h1>{sala[0].numeroSala}</h1>
-            {sala.map((evento) => {
+            <h1>{sala[0].nomeSala}</h1>
+            {sala.map(() => {
                 return (
-                    // <div key={uuid()}>AAA</div>
-                    <Evento key={uuid()} evento={evento}></Evento>
+                    <Evento key={uuid()} />
                 )
             })}
-            
         </div>
     );
 }
