@@ -22,5 +22,11 @@ https://www.npmjs.com/package/react-router-dom
 `sass`
 https://www.npmjs.com/package/react-css-modules
 
+`react-uuid`
+https://www.npmjs.com/package/react-uuid
+
+`react-bootstrap bootstrap`
+https://react-bootstrap.github.io/getting-started/introduction/
+
 
 # Tutorial do usuario: https://github.com/GABRIELBOLDIVEIGA/Calendario-Audiencia-/blob/main/tutorial%20usuario.pdf

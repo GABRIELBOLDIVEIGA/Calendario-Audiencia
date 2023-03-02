@@ -1,7 +1,10 @@
-import React from 'react'
+
 
 export default function Login() {
-  return (
-    <div>Login</div>
-  )
+    return (
+        <section>
+            <h1>Login</h1>
+            
+        </section>
+    );
 }
