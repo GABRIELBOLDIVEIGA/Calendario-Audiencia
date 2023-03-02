@@ -7,25 +7,45 @@
 ![aud-1](https://user-images.githubusercontent.com/110861595/221740226-d3336fab-e9a8-434b-9fb7-350c23e22075.PNG)
 ![aud-2](https://user-images.githubusercontent.com/110861595/221740230-a6d44833-a4bb-47f1-aaa5-442fe0815716.PNG)
 
-Live Demo: https://calendario-audiencia.vercel.app/
+## Configuração
 
-`Login sera bloqueado se não utilizar um email de ADM da API do google`
+Instalando dependencias:
+
+```
+npm install
+```
+
+Compilando scripts e styles:
+
+```
+npm start
+```
 
 ## Pacotes
-`react-google-calendar-api`<br>
+```
+npm install react-google-calendar-api
+```
 https://www.npmjs.com/package/react-google-calendar-api
 
-`react-router-dom`<br>
+```
+npm install react-router-dom
+```
 https://www.npmjs.com/package/react-router-dom
 
-`sass`<br>
+```
+npm install sass
+```
 https://www.npmjs.com/package/react-css-modules
 
-`react-uuid`<br>
+```
+npm install react-uuid
+```
 https://www.npmjs.com/package/react-uuid
 
-`react-bootstrap bootstrap`<br>
+```
+npm install react-bootstrap bootstrap
+```
 https://react-bootstrap.github.io/getting-started/introduction/
 
-
-# Tutorial do usuario: https://github.com/GABRIELBOLDIVEIGA/Calendario-Audiencia-/blob/main/tutorial%20usuario.pdf
+## Tutorial do usuario: 
+https://github.com/GABRIELBOLDIVEIGA/Calendario-Audiencia-/blob/main/tutorial%20usuario.pdf
