@@ -1,17 +1,19 @@
 import style from "./Evento.module.scss";
 
 export default function Evento({ evento }) {
-  return (
-    <div>
-      <h2>evento</h2>
-      {/* <p>{evento.data}</p>
-      <p>{evento.emailVara}</p>
-      <p>{evento.id}</p>
-      <p>{evento.inicio}</p>
-      <p>{evento.nomeSala}</p>
-      <p>{evento.nomeVara}</p>
-      <p>{evento.numeroSala}</p>
-      <p>{evento.processo}</p> */}
-    </div>
-  )
+    return (
+        <div className={style.evento}>
+            <div className={style.evento__cabecalho}>
+                <p>{evento.data}</p>
+                <p>{evento.inicio}</p>
+            </div>
+
+            <div className={style.evento__processo}>
+              <p>Processo</p>
+              <p>{evento.processo}</p>
+            </div>
+
+            <p className={style.evento__nomeVara}>{evento.nomeVara}</p>
+        </div>
+    );
 }
