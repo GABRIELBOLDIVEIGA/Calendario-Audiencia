@@ -53,4 +53,4 @@ npm i react-live-clock
 https://www.npmjs.com/package/react-live-clock?activeTab=readme
 
 ## Tutorial do usuario: 
-https://github.com/GABRIELBOLDIVEIGA/Calendario-Audiencia-/blob/main/tutorial%20usuario.pdf
+https://github.com/GABRIELBOLDIVEIGA/Calendario-Audiencia-/blob/mainV1/tutorial%20usuario.pdf
