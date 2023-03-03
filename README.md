@@ -2,7 +2,7 @@
 
 :construction: Projeto em construção :construction:
 
-# Web App do calendário de audiências do Fórum Cível de Vitória.
+# Web App do calendário de Eventos.
 
 ![aud-1](https://user-images.githubusercontent.com/110861595/221740226-d3336fab-e9a8-434b-9fb7-350c23e22075.PNG)
 ![aud-2](https://user-images.githubusercontent.com/110861595/221740230-a6d44833-a4bb-47f1-aaa5-442fe0815716.PNG)
