@@ -52,5 +52,15 @@ npm i react-live-clock
 ```
 https://www.npmjs.com/package/react-live-clock?activeTab=readme
 
+```
+npm i styled-components
+```
+https://www.npmjs.com/package/styled-components
+
+```
+npm i react-slick
+```
+https://www.npmjs.com/package/react-slick?activeTab=readme
+
 ## Tutorial do usuario: 
 https://github.com/GABRIELBOLDIVEIGA/Calendario-Audiencia-/blob/mainV1/tutorial%20usuario.pdf

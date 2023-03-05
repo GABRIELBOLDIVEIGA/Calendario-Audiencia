@@ -8,6 +8,7 @@
     background-color: #fefff4;
     position: relative;
     overflow: hidden;
+    // display: visible;
 
     &__clock {
         color: #8a2be2;
@@ -31,10 +32,13 @@
 
     &__containerButton {
         display: flex;
-        justify-content: center;
+        flex-direction: row-reverse;
+        justify-content: space-between;
         gap: 20px;
         width: 100%;
         cursor: pointer;
+
+        // border: 1px solid red;
 
         button {
             border: 5px solid black;
@@ -43,7 +47,7 @@
             font-size: 1.3em;
             font-weight: 700;
 
-            transform: translate(3.2rem, 2.6rem);
+            transform: translateY(2.6rem);
         }
 
         button:nth-child(1) {
@@ -59,7 +63,12 @@
 
     &__containerButton:hover {
         button {
-            transform: translate(3.3rem, -0.8rem);
+            transform: translateY(0);
         }
     }
+}
+
+.teste {
+    margin-top: 100px;
+    border: 1px solid red;
 }
