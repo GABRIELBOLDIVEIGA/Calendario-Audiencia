@@ -1,4 +1,8 @@
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import { addDays, addNome, numeroSala, fitraHorario, filtraData } from "common/functions/functions";
 
 import "./App.module.scss";
 import ApiCalendar from "react-google-calendar-api";
@@ -7,26 +11,41 @@ import { configApiCalendar } from "./common/config/config.js";
 import Sala from "./components/Sala/index";
 import uuid from "react-uuid";
 import Clock from "react-live-clock";
-import Carousel from "react-bootstrap/Carousel";
-import "bootstrap/dist/css/bootstrap.css";
+
+// import "bootstrap/dist/css/bootstrap.css";
+
 import style from "./App.module.scss";
 import LoadingSpinner from "components/LoadingSpinner";
 import styled from "styled-components";
 
 export default function App() {
-    
-
     const [usuarios, setUsuarios] = useState([]);
     const [salasID, setSalasID] = useState([
-        // {"id":"c_839d04047b7a43ba4cb2f34f8c0156ebf014e85b57263ff5364a8247e3d264a7@group.calendar.google.com","sala":"Sala Teste 1"},
-        // {"id":"c_839d04047b7a43ba4cb2f34f8c0156ebf014e85b57263ff5364a8247e3d264a7@group.calendar.google.com","sala":"Sala Teste 1"},
-        { id: "1e0e63b08e6016990eaf64b86e684502ae1fec99b5bb567c0b1ed5080e9fa91e@group.calendar.google.com", sala: "Sala Teste 2" },
-        { id: "03cb4fc972ae35d08ae9c3043c9fee4b38f74ca33bfa3af6688ce7c4ae5fe099@group.calendar.google.com", sala: "Sala Teste 1" },
+        // { id: "861e66117ea06082b7fbe7fcd32ad16f28fc46983bdb62151242ec5c3b12dc74@group.calendar.google.com", sala: "Sala 1" },
+        // { id: "810e981baa2a07de32b772cf4cea3ecc706bd27bd261a5d8edc91340654d0d53@group.calendar.google.com", sala: "Sala 2" },
+        // { id: "0fbf0cd46cc45ddb70f36d1c82b7e4807af21613471f5ec466d285449d872064@group.calendar.google.com", sala: "Sala 3" },
     ]);
     const [salas, setSalas] = useState([]);
     const [resultadoConsulta, setResultadoConsulta] = useState([]);
-
+    const resultadoRef = useRef(resultadoConsulta);
+    resultadoRef.current = resultadoConsulta;
+    const salasRef = useRef(salas);
+    salasRef.current = salas;
+    const TEMPO_LOOP_CONSULTA_API = 1000 * 60 * 10; // milissegundos * segundos * minutos;
+    const TEMPO_LOOP_ATUALIZA_TOKEN = 1000 * 60 * 45; // milissegundos * segundos * minutos;
+    const TEMPO_DE_CADA_SLIDE = 1000 * 60 * 0.5; // milissegundos * segundos * minutos;
+    const VELOCIDADE_EFEITO_TROCA_SLIDE = 1000 * 60 * 0.025; // milissegundos * segundos * minutos;
     const apiCalendar = new ApiCalendar(configApiCalendar);
+
+    var settings = {
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: TEMPO_DE_CADA_SLIDE,
+        speed: VELOCIDADE_EFEITO_TROCA_SLIDE,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    };
 
     useEffect(() => {
         fetch(`https://my-json-server.typicode.com/gabrielbolditeste/db.json/usuarios`)
@@ -40,192 +59,110 @@ export default function App() {
             .then((resposta) => resposta.json())
             .then((dados) => {
                 // console.log(dados);
-                // setSalasID(dados);
+                setSalasID(dados);
             });
     }, []);
-
-    var settings = {
-        dots: true,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        speed: 1500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    };
 
     function handleItemClick() {
         apiCalendar.handleAuthClick();
     }
 
-    function listarEventos() {
-        console.log("Listando eventos...");
+    function buscarEventosDeCadaCalendario() {
+        console.log("Consulta API...", new Date());
         setResultadoConsulta([]);
 
-        salasID.forEach((sala, index) => {
+        salasID.forEach((sala) => {
             apiCalendar
                 .listEvents({
                     calendarId: sala.id,
                     timeMin: new Date().toISOString(),
-                    // timeMax: addDays(1).toISOString(),
+                    // timeMax: addDays(1).toISOString(), // ative para que apenas os eventos do dia atual + 1 dia sejam retornados
                     showDeleted: false,
-                    maxResults: 6,
+                    maxResults: 12,
                     orderBy: "startTime",
                     singleEvents: true,
                 })
                 .then(({ result }) => {
                     if (result.items.length !== 0) {
-                        console.log(result.items);
-                        setResultadoConsulta((old) => [...old, result.items]);
-                        console.log(resultadoConsulta)
-                        console.log(resultadoRef)
+                        // console.log(result.items[0].organizer.displayName, "---", result.items);
+                        setResultadoConsulta((old) => [...old, result.items]); // resultadoRef
+                        // console.log(resultadoRef)
                     }
                 });
         });
     }
 
-    function modelaEventos() {
-        console.log("Modela Eventos...");
+    function RenderizaInfoFiltradaDosEventos() {
+        console.log("Renderizar Eventos...", new Date());
         var arrayDeSala = [];
 
-        var x = resultadoRef.current;
-
-        x.forEach((arr) => {
-        // resultadoConsulta.forEach((arr) => {
+        resultadoRef.current.forEach((arrayResultadoRef) => {
             var arrayDeEventosPorSala = [];
-            arr.forEach((e) => {
-                const data = new Date(e.start.dateTime).toLocaleDateString("pt-PT");
-                const horario = fitraHorario(new Date(e.start.dateTime).toLocaleTimeString("pt-PT"));
-                const numeroDaSala = numeroSala(e.organizer.displayName);
-                const criador = addNome(e.creator.email);
-
+            arrayResultadoRef.forEach((cardEvento) => {
                 arrayDeEventosPorSala.push({
-                    emailVara: e.creator.email,
-                    data: data,
-                    inicio: horario,
-                    nomeSala: e.organizer.displayName,
-                    nomeVara: criador,
-                    processo: e.summary,
-                    numeroSala: numeroDaSala,
+                    emailVara: cardEvento.creator.email,
+                    data: filtraData(cardEvento.start.dateTime),
+                    inicio: fitraHorario(cardEvento.start.dateTime),
+                    nomeSala: cardEvento.organizer.displayName,
+                    nomeVara: addNome(cardEvento.creator.email, usuarios),
+                    processo: cardEvento.summary,
+                    numeroSala: numeroSala(cardEvento.organizer.displayName),
                 });
             });
             arrayDeSala.push(arrayDeEventosPorSala);
-            console.log(arrayDeSala)
         });
-        // ordenaSalas(arrayDeSala);
 
-        console.log(arrayDeSala)
         arrayDeSala.sort((a, b) => (a[0].numeroSala > b[0].numeroSala ? 1 : -1));
-        
-        salasRef.current = arrayDeSala
+        salasRef.current = arrayDeSala;
         setSalas(salasRef.current);
-    }
-
-    function addDays(days) {
-        var result = new Date();
-        result.setDate(result.getDate() + days);
-        return result;
-    }
-
-    function fitraHorario(str) {
-        return str.substring(0, str.length - 3);
-    }
-
-    function numeroSala(string) {
-        var numsStr = string.replace(/[^0-9]/g, "");
-        return parseInt(numsStr);
-    }
-
-    function addNome(criador) {
-        const result = usuarios.find(({ email }) => email === criador);
-        return result.nome;
-    }
-
-    function ordenaSalas(array) {
-        console.log(array)
-        var novoArray = array;
-        novoArray.sort((a, b) => (a[0].numeroSala > b[0].numeroSala ? 1 : -1));
-        setSalas(novoArray);
-        setSalas(salasRef.current);
-    }
-
-    function atualizaToken() {
-        apiCalendar.tokenClient.requestAccessToken({ prompt: "none" });
-        // console.log("Token atualzado...");
-    }
-
-    function iniciaContagens() {
-        console.log("Iniciando contagem...");
-        setTimeout(listarEventos, 1000 * 15);
-        // setInterval(modelaEventos, 1000 * 30);
-        setTimeout(atualizaToken, 1000 * 60 * 50);
-        setTimeout(iniciaContagens, 1000 * 45);
+        // console.log(salasRef.current);
     }
 
     ////////////////////////////////////////////////////////////////
-    
-    const resultadoRef = useRef(resultadoConsulta)
-    resultadoRef.current = resultadoConsulta;
-    const salasRef = useRef(salas);
-    salasRef.current = salas;
-    const getCountTimeout = () => {
-        console.log("Iniciando contagem...")
-        setTimeout(() => {
-            // setSalas(countRef.current + 1);
-            setTimeout(listarEventos, 10000)
-            setTimeout(modelaEventos, 13000)
-            
-            
-            // setTimeoutCount(countRef.current);
-            setTimeout(getCountTimeout, 20000)
-        }, 15000);
+
+    const iniciaLoopDaAplicacao = () => {
+        console.log("Iniciando contagem do LOOP...", new Date());
+        buscarEventosDeCadaCalendario();
+        setTimeout(RenderizaInfoFiltradaDosEventos, 1000 * 10); // Esse timeout serve para esperar 30 segundos ate a resposta   da API, provavel que possa ser feito com async function...
+
+        setTimeout(iniciaLoopDaAplicacao, TEMPO_LOOP_CONSULTA_API); // Tempo do loop.
     };
 
-    function setTimeoutCount(ref) {
-        console.log("Ref: ", ref);
-        console.log("Count: ", salas);
+    const iniciaLoopAtualizacaoDoToken = () => {
+        console.log("getTokenTimeout: ", new Date());
+        apiCalendar.tokenClient.requestAccessToken({ prompt: "none" });
         
-        // setCount(count + 3)
-        // countRef.current = 5;
-        setTimeout(getCountTimeout, 1000)
+        setTimeout(iniciaLoopAtualizacaoDoToken, TEMPO_LOOP_ATUALIZA_TOKEN); // token tem duração valida de 60 minutos...
+    };
+
+    function t2() {
+        apiCalendar.tokenClient.requestAccessToken({ prompt: 'consent' });
     }
 
-
-
-    ////////////////////////////////////////////////////////////////
-
-    ////////////////////////////////////////////////////////////////
-    
-    
-
     return (
-        //className={style.app}
-        <section>
+        <section className={style.app}>
             <Clock className={style.app__clock} wrap={false} format={"HH:mm"} ticking={true} />
 
-            <Slider {...settings}>
-                {/* <div>
-                    <h1>A</h1>
-                </div>
-                <div>
-                    <h1>B</h1>
-                </div>
-                <div>
-                    <h1>C</h1>
-                </div> */}
+            <Slider {...settings} className={style.slider}>
                 {salas.map((sala) => {
                     return <Sala key={uuid()} sala={sala} />;
                 })}
             </Slider>
 
-            {/* className={style.app__containerButton} */}
-            <div className={style.teste}>
-                <button onClick={handleItemClick}>Login</button>
+            <div className={style.app__containerButton}>
 
-                <button onClick={listarEventos}>listarEventos</button>
-                <button onClick={modelaEventos}>modelaEventos</button>
-                <button onClick={iniciaContagens}>Inicia Contagem</button>
-                <button onClick={getCountTimeout}>Click !</button>
+                <button onClick={handleItemClick}>Login</button>
+                <button onClick={t2}>T2</button>
+                <button> <a href="https://github.com/GABRIELBOLDIVEIGA" target="_blank"> GitHub </a></button>
+                <button
+                    onClick={() => {
+                        iniciaLoopAtualizacaoDoToken();
+                        iniciaLoopDaAplicacao();
+                        t2();
+                    }}
+                >
+                    Click !
+                </button>
             </div>
         </section>
     );

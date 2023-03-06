@@ -60,6 +60,9 @@ https://www.npmjs.com/package/styled-components
 ```
 npm i react-slick
 ```
+```
+npm install slick-carousel
+```
 https://www.npmjs.com/package/react-slick?activeTab=readme
 
 ## Tutorial do usuario: 

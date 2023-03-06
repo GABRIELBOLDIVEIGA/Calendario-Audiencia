@@ -1,18 +1,16 @@
 .sala {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    // border: 10px solid red;
+    border-bottom: 50px solid transparent;
 
     &__titulo {
         align-self: center;
         font-size: 5em;
         font-weight: 700;
-        margin-top: 0.5%;
-        // margin-bottom: 50px;
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
         text-align: center;
         width: 20%;
-        margin-top: 1.5rem !important;
 
         /* background-color: #c5c5fe; */
         background-color: #ffadde;
@@ -109,7 +107,7 @@
             padding-top: 0.4em;
             margin-bottom: 0.3em;
 
-            inline-size: 24rem; 
+            inline-size: 24rem;
             word-break: break-all;
         }
     }
