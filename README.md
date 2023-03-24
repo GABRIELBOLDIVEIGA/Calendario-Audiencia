@@ -65,5 +65,7 @@ npm install slick-carousel
 ```
 https://www.npmjs.com/package/react-slick?activeTab=readme
 
+## Para tornar o app automatizado consulte a pasta Robot
+
 ## Tutorial do usuario: 
 https://github.com/GABRIELBOLDIVEIGA/Calendario-Audiencia-/blob/mainV1/tutorial%20usuario.pdf

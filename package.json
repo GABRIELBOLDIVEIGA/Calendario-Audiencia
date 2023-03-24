@@ -15,7 +15,10 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "react-uuid": "^2.0.0",
+    "requests": "^0.3.0",
     "sass": "^1.58.3",
+    "selenium": "^2.20.0",
+    "selenium-webdriver": "^4.8.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.8",
     "web-vitals": "^2.1.4"

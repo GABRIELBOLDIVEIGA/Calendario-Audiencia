@@ -26,39 +26,31 @@
         gap: 20px;
         width: 100%;
 
+        // background-color: red;
+
         button {
-            border: 5px solid black;
-            border-radius: 20px;
-            padding: .5rem 1rem;
+            height: 5rem;
             font-size: 1.3em;
             font-weight: 700;
             cursor: pointer;
 
-            transform: translateY(3.2rem);
+            border: none;
+            background-color: transparent;
+
         }
 
-        button:nth-child(1) {
-            background-color: #a3e8ff;
-            margin-right: 2rem;
-        }
-        button:nth-child(2) {
-            background-color: #dafc3d;
-            margin-left: 2rem;
-        }
-        button:nth-child(3) {
-            background-color: #ffadde;
-            margin-left: 2rem;
-        }
+        // button:nth-child(1) {
+        //     background-color: #a3e8ff;
+        //     margin-right: 2rem;
+        // }
+        // button:nth-child(2) {
+        //     background-color: #dafc3d;
+        //     margin-left: 2rem;
+        // }
 
         a {
             text-decoration: none;
             color: black;
-        }
-    }
-
-    &__containerButton:hover {
-        button {
-            transform: translateY(0);
         }
     }
 }

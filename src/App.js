@@ -10,6 +10,7 @@ import Sala from "./components/Sala/index";
 import uuid from "react-uuid";
 import Clock from "react-live-clock";
 import style from "./App.module.scss";
+import LoadingSpinner from "components/LoadingSpinner";
 
 export default function App() {
     const [usuarios, setUsuarios] = useState([]);
@@ -22,7 +23,7 @@ export default function App() {
     salasRef.current = salas;
     const TEMPO_LOOP_CONSULTA_API = 1000 * 60 * 10; // milissegundos * segundos * minutos;
     const TEMPO_LOOP_ATUALIZA_TOKEN = 1000 * 60 * 45; // milissegundos * segundos * minutos;
-    const TEMPO_DE_CADA_SLIDE = 1000 * 60 * 0.5; // milissegundos * segundos * minutos;
+    const TEMPO_DE_CADA_SLIDE = 1000 * 10; // milissegundos * segundos * minutos;
     const VELOCIDADE_EFEITO_TROCA_SLIDE = 1000 * 60 * 0.025; // milissegundos * segundos * minutos;
     const apiCalendar = new ApiCalendar(configApiCalendar);
 
@@ -34,6 +35,7 @@ export default function App() {
         speed: VELOCIDADE_EFEITO_TROCA_SLIDE,
         slidesToShow: 1,
         slidesToScroll: 1,
+        pauseOnHover: false
     };
 
     useEffect(() => {
@@ -104,54 +106,37 @@ export default function App() {
         arrayDeSala.sort((a, b) => (a[0].numeroSala > b[0].numeroSala ? 1 : -1));
         salasRef.current = arrayDeSala;
         setSalas(salasRef.current);
-        // console.log(salasRef.current);
     }
-
-    ////////////////////////////////////////////////////////////////
-
-    const iniciaLoopDaAplicacao = () => {
-        console.log("Iniciando contagem do LOOP...", new Date());
-        buscarEventosDeCadaCalendario();
-        setTimeout(RenderizaInfoFiltradaDosEventos, 1000 * 10); // Esse timeout serve para esperar 30 segundos ate a resposta   da API, provavel que possa ser feito com async function...
-
-        // setTimeout(iniciaLoopDaAplicacao, TEMPO_LOOP_CONSULTA_API); // Tempo do loop.
-    };
-
-    const iniciaLoopAtualizacaoDoToken = () => {
-        console.log("getTokenTimeout: ", new Date());
-        apiCalendar.tokenClient.requestAccessToken({ prompt: "" });
-
-        // setTimeout(iniciaLoopAtualizacaoDoToken, TEMPO_LOOP_ATUALIZA_TOKEN); // token tem duração valida de 60 minutos...
-    };
 
     return (
         <section className={style.app}>
             <Clock className={style.app__clock} wrap={false} format={"HH:mm"} ticking={true} />
 
-            <Slider {...settings} className={style.slider}>
-                {salas.map((sala) => {
-                    return <Sala key={uuid()} sala={sala} />;
-                })}
-            </Slider>
+            {salas.length === 0 ? (
+                <LoadingSpinner />
+            ) : (
+                <Slider {...settings} className={style.slider}>
+                    {salas.map((sala) => {
+                        return <Sala key={uuid()} sala={sala} />;
+                    })}
+                </Slider>
+            )}
 
             <div className={style.app__containerButton}>
-                <button onClick={handleItemClick}>Login</button>
+                <button id="btn_login" onClick={handleItemClick}>
+                    {/* Login */}
+                </button>
 
-                <button>
-                    {" "}
-                    <a href="https://github.com/GABRIELBOLDIVEIGA" target="_blank">
-                        {" "}
-                        GitHub{" "}
-                    </a>
-                </button>
                 <button
+                id="btn_loadRespAPI"
                     onClick={() => {
-                        iniciaLoopAtualizacaoDoToken();
-                        iniciaLoopDaAplicacao();
+                        buscarEventosDeCadaCalendario();
+                        setTimeout(RenderizaInfoFiltradaDosEventos, 2500);
+                        console.log("Clicou !!!!")
                     }}
-                >
-                    Click !
-                </button>
+                />
+                    
+               
             </div>
         </section>
     );
