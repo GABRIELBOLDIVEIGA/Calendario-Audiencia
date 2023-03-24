@@ -42,5 +42,7 @@ start cmd /k "cd Robot && node Robot.js"
 
 * Caso o selenium-webdriver inicie antes do serve local, tente aumentar o tempo no arquivo run-all.bat, alinha de enterece é: timeout /t 3 /nobreak
 
+* A veraso do navegador chrome deve ser a 111, caso a versao do navegador seja diferente, baixe uma versao do chromedriver compativel com seu navegador.
+
 
 
