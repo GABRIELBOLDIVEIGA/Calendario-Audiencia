@@ -9,6 +9,8 @@
 
 ## Configuração
 
+* Use node v18.13.0
+
 Instalando dependencias:
 
 ```
