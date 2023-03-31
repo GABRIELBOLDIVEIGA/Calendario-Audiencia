@@ -48,7 +48,8 @@ const tempo_de_reload_da_pagina_paraTeste = 1000 * 20;
     await driver.manage().window().fullscreen();
 
     // await sleep(2000);
-    await driver.findElement(By.xpath('//*[@id="root"]/section/div[2]')).click();
+    // await driver.findElement(By.xpath('//*[@id="root"]/section/div[2]')).click();
+    await driver.findElement(By.id('btn_loadRespAPI')).click();
 
     setTimeout(async () => {
         await driver.close();

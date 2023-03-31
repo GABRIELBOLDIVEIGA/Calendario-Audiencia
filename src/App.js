@@ -11,6 +11,7 @@ import uuid from "react-uuid";
 import Clock from "react-live-clock";
 import style from "./App.module.scss";
 import LoadingSpinner from "components/LoadingSpinner";
+import { AiFillGithub } from "react-icons/ai";
 
 export default function App() {
     const [usuarios, setUsuarios] = useState([]);
@@ -111,6 +112,7 @@ export default function App() {
     return (
         <section className={style.app}>
             <Clock className={style.app__clock} wrap={false} format={"HH:mm"} ticking={true} />
+            <p className={style.app__nome}> <AiFillGithub/> Gabriel Boldi</p>
 
             {salas.length === 0 ? (
                 <LoadingSpinner />
@@ -124,8 +126,10 @@ export default function App() {
 
             <div className={style.app__containerButton}>
                 <button id="btn_login" onClick={handleItemClick}>
-                    {/* Login */}
+                <p className={style.app__nome}> <AiFillGithub/> Gabriel Boldi</p>
                 </button>
+
+                
 
                 <button
                 id="btn_loadRespAPI"
@@ -135,8 +139,9 @@ export default function App() {
                         console.log("Clicou !!!!")
                     }}
                 />
-                    
-               
+
+                
+                
             </div>
         </section>
     );
