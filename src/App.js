@@ -11,7 +11,7 @@ import uuid from "react-uuid";
 import Clock from "react-live-clock";
 import style from "./App.module.scss";
 import LoadingSpinner from "components/LoadingSpinner";
-import { AiFillGithub } from "react-icons/ai";
+// import { AiFillGithub } from "react-icons/ai";
 
 export default function App() {
     const [usuarios, setUsuarios] = useState([]);
@@ -50,7 +50,7 @@ export default function App() {
         fetch("https://my-json-server.typicode.com/gabrielbolditeste/db.json/calendarIds")
             .then((resposta) => resposta.json())
             .then((dados) => {
-                // console.log(dados);
+                console.log(dados);
                 setSalasID(dados);
             });
     }, []);
@@ -76,7 +76,7 @@ export default function App() {
                 })
                 .then(({ result }) => {
                     if (result.items.length !== 0) {
-                        // console.log(result.items[0].organizer.displayName, "---", result.items);
+                        console.log(result.items[0].organizer.displayName, "---", result.items);
                         setResultadoConsulta((old) => [...old, result.items]); // resultadoRef
                         // console.log(resultadoRef)
                     }
@@ -112,7 +112,7 @@ export default function App() {
     return (
         <section className={style.app}>
             <Clock className={style.app__clock} wrap={false} format={"HH:mm"} ticking={true} />
-            <p className={style.app__nome}> <AiFillGithub/> Gabriel Boldi</p>
+            {/* <p className={style.app__nome}> <AiFillGithub/> Gabriel Boldi</p> */}
 
             {salas.length === 0 ? (
                 <LoadingSpinner />
@@ -126,7 +126,7 @@ export default function App() {
 
             <div className={style.app__containerButton}>
                 <button id="btn_login" onClick={handleItemClick}>
-                <p className={style.app__nome}> <AiFillGithub/> Gabriel Boldi</p>
+                {/* <p className={style.app__nome}> <AiFillGithub/> Gabriel Boldi</p> */}
                 </button>
 
                 
