@@ -40,14 +40,14 @@ export default function App() {
     };
 
     useEffect(() => {
-        fetch(`https://my-json-server.typicode.com/gabrielbolditeste/db.json/usuarios`)
+        fetch(`https://my-json-server.typicode.com/CivelVitoria/.db/usuarios`)
             .then((resposta) => resposta.json())
             .then((dados) => {
-                // console.log(dados);
+                console.log(dados);
                 setUsuarios(dados);
             });
 
-        fetch("https://my-json-server.typicode.com/gabrielbolditeste/db.json/calendarIds")
+        fetch("https://my-json-server.typicode.com/CivelVitoria/.db/calendarIds")
             .then((resposta) => resposta.json())
             .then((dados) => {
                 console.log(dados);
@@ -60,7 +60,6 @@ export default function App() {
     }
 
     function buscarEventosDeCadaCalendario() {
-        console.log("Consulta API...", new Date());
         setResultadoConsulta([]);
 
         salasID.forEach((sala) => {
@@ -68,7 +67,7 @@ export default function App() {
                 .listEvents({
                     calendarId: sala.id,
                     timeMin: new Date().toISOString(),
-                    // timeMax: addDays(1).toISOString(), // ative para que apenas os eventos do dia atual + 1 dia sejam retornados
+                    timeMax: addDays(1).toISOString(), // ative para que apenas os eventos do dia atual + 1 dia sejam retornados
                     showDeleted: false,
                     maxResults: 12,
                     orderBy: "startTime",
@@ -78,14 +77,12 @@ export default function App() {
                     if (result.items.length !== 0) {
                         console.log(result.items[0].organizer.displayName, "---", result.items);
                         setResultadoConsulta((old) => [...old, result.items]); // resultadoRef
-                        // console.log(resultadoRef)
                     }
                 });
         });
     }
 
     function RenderizaInfoFiltradaDosEventos() {
-        console.log("Renderizar Eventos...", new Date());
         var arrayDeSala = [];
 
         resultadoRef.current.forEach((arrayResultadoRef) => {
@@ -129,19 +126,14 @@ export default function App() {
                 {/* <p className={style.app__nome}> <AiFillGithub/> Gabriel Boldi</p> */}
                 </button>
 
-                
-
                 <button
-                id="btn_loadRespAPI"
+                    id="btn_loadRespAPI"
                     onClick={() => {
                         buscarEventosDeCadaCalendario();
                         setTimeout(RenderizaInfoFiltradaDosEventos, 2500);
                         console.log("Clicou !!!!")
                     }}
                 />
-
-                
-                
             </div>
         </section>
     );
