@@ -67,7 +67,7 @@ export default function App() {
                 .listEvents({
                     calendarId: sala.id,
                     timeMin: new Date().toISOString(),
-                    timeMax: addDays(1).toISOString(), // ative para que apenas os eventos do dia atual + 1 dia sejam retornados
+                    timeMax: addDays(30).toISOString(), // ative para que apenas os eventos do dia atual + 1 dia sejam retornados
                     showDeleted: false,
                     maxResults: 12,
                     orderBy: "startTime",
