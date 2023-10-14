@@ -1,0 +1,17 @@
+export enum Segundos {
+    _1segundos = 1000 * 1,
+    _2segundos = 1000 * 2,
+    _3segundos = 1000 * 3,
+    _4segundos = 1000 * 4,
+    _5segundos = 1000 * 5,
+    _6segundos = 1000 * 6,
+    _7segundos = 1000 * 7,
+    _8segundos = 1000 * 8,
+    _9segundos = 1000 * 9,
+    _10segundos = 1000 * 10,
+    _20segundos = 1000 * 20,
+    _30segundos = 1000 * 30,
+    _40segundos = 1000 * 40,
+    _50segundos = 1000 * 50,
+    _60segundos = 1000 * 60,
+}

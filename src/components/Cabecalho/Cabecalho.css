@@ -1,0 +1,9 @@
+.clock {
+    width: 10rem;
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: center;
+    height: max-content;
+
+    padding: 1.5rem 1.5rem 0 0;
+}
