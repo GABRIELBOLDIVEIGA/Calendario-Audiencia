@@ -1,74 +1,46 @@
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+# Getting Started with Create React App
 
-:construction: Projeto em construção :construction:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Web App do calendário de Eventos.
+## Available Scripts
 
-![aud-1](https://user-images.githubusercontent.com/110861595/221740226-d3336fab-e9a8-434b-9fb7-350c23e22075.PNG)
-![aud-2](https://user-images.githubusercontent.com/110861595/221740230-a6d44833-a4bb-47f1-aaa5-442fe0815716.PNG)
+In the project directory, you can run:
 
-## Configuração
+### `npm start`
 
-* Use node v18.13.0
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Instalando dependencias:
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-```
-npm install
-```
+### `npm test`
 
-Compilando scripts e styles:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-```
-npm start
-```
+### `npm run build`
 
-## Pacotes
-```
-npm install react-google-calendar-api
-```
-https://www.npmjs.com/package/react-google-calendar-api
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-```
-npm install react-router-dom
-```
-https://www.npmjs.com/package/react-router-dom
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-```
-npm install sass
-```
-https://www.npmjs.com/package/react-css-modules
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```
-npm install react-uuid
-```
-https://www.npmjs.com/package/react-uuid
+### `npm run eject`
 
-```
-npm install react-bootstrap bootstrap
-```
-https://react-bootstrap.github.io/getting-started/introduction/
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-```
-npm i react-live-clock
-```
-https://www.npmjs.com/package/react-live-clock?activeTab=readme
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-```
-npm i styled-components
-```
-https://www.npmjs.com/package/styled-components
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-```
-npm i react-slick
-```
-```
-npm install slick-carousel
-```
-https://www.npmjs.com/package/react-slick?activeTab=readme
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Para tornar o app automatizado consulte a pasta Robot
-https://github.com/GABRIELBOLDIVEIGA/Calendario-Audiencia-/tree/main/Robot
+## Learn More
 
-## Tutorial do usuario: 
-https://github.com/GABRIELBOLDIVEIGA/Calendario-Audiencia-/blob/mainV1/tutorial%20usuario.pdf
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).

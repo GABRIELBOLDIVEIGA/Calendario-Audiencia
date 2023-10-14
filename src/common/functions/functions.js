@@ -22,6 +22,5 @@ export function numeroSala(string) {
 
 export function addNome(criador, usuarios) {
     const result = usuarios.find(({ email }) => email === criador);
-    
-    return result.nome ? result.nome : "...";
+    return result.nome;
 }
